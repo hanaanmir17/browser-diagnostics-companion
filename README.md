@@ -1,5 +1,7 @@
 # Browser Diagnostics Companion
 
+[![Portfolio Projects](https://img.shields.io/badge/Portfolio-Projects-2088FF?style=flat-square&logo=github&logoColor=white)](https://github.com/users/hanaanmir17/projects/2)
+
 A Chrome extension (Manifest V3) that turns the browser itself into a lightweight diagnostics tool. It watches the active tab in real time and surfaces the three things a support/QA engineer usually digs for by hand in DevTools: console errors and warnings, failed network requests, and page performance timing — then lets you export it all as a single JSON report.
 
 ## Features
