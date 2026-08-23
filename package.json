@@ -1,0 +1,11 @@
+{
+  "name": "browser-diagnostics-companion",
+  "version": "1.0.0",
+  "description": "A Chrome Manifest V3 extension that captures console errors/warnings, failed network requests, and page performance timing for the active tab, with a live popup UI and JSON report export.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "author": "Hanaan Mir"
+}

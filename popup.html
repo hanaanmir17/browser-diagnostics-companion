@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Browser Diagnostics Companion</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-title">
+      <span class="logo-dot"></span>
+      <h1>Browser Diagnostics Companion</h1>
+    </div>
+    <div class="header-actions">
+      <button id="clearBtn" class="btn btn-ghost" title="Clear captured data for this tab">Clear</button>
+      <button id="exportBtn" class="btn btn-primary" title="Export a JSON diagnostics report">Export Report</button>
+    </div>
+  </header>
+
+  <div class="tab-url" id="tabUrl">Loading current tab…</div>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" data-tab="console" role="tab" aria-selected="true">
+      Console Issues <span class="badge" id="badgeConsole">0</span>
+    </button>
+    <button class="tab-btn" data-tab="requests" role="tab" aria-selected="false">
+      Failed Requests <span class="badge" id="badgeRequests">0</span>
+    </button>
+    <button class="tab-btn" data-tab="performance" role="tab" aria-selected="false">
+      Performance
+    </button>
+  </nav>
+
+  <main class="panels">
+    <section class="panel active" id="panel-console">
+      <div class="empty-state" id="consoleEmpty">No console errors or warnings captured yet.</div>
+      <ul class="item-list" id="consoleList"></ul>
+    </section>
+
+    <section class="panel" id="panel-requests">
+      <div class="empty-state" id="requestsEmpty">No failed requests captured yet.</div>
+      <ul class="item-list" id="requestsList"></ul>
+    </section>
+
+    <section class="panel" id="panel-performance">
+      <div class="perf-grid" id="perfGrid">
+        <div class="perf-card">
+          <div class="perf-label">Page Load Time</div>
+          <div class="perf-value" id="perfLoad">–</div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-label">DOMContentLoaded</div>
+          <div class="perf-value" id="perfDcl">–</div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-label">Time to First Byte</div>
+          <div class="perf-value" id="perfTtfb">–</div>
+        </div>
+      </div>
+      <h2 class="section-heading">Slowest Resources</h2>
+      <div class="empty-state" id="perfEmpty">No performance data captured yet.</div>
+      <ul class="item-list" id="perfList"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="statusMsg"></span>
+  </footer>
+
+  <script src="lib/performance.js"></script>
+  <script src="lib/requests.js"></script>
+  <script src="lib/report.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
